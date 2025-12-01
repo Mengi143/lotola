@@ -1,0 +1,122 @@
+/* =========================================================
+   Dashboard.css (Style Moderne et Unifié)
+   Vue d'Ensemble et KPIs (Accent BLEU pour l'importance)
+   ========================================================= */
+
+/* --- Variables CSS pour la cohérence (mêmes que Agent/Admin/Decision) --- */
+:root {
+    --color-primary-blue: #1A73E8; /* Bleu principal (Actions, Titres, Graphiques) */
+    --color-danger-red: #DC3545; /* Rouge (Alertes, KPIs importants) */
+    --color-accent-yellow: #FFC107; /* Jaune (Accents, bordures) */
+    --color-text-dark: #34495E; /* Gris foncé pour le texte */
+    --color-background-light: #F4F6F9; /* Arrière-plan général très clair */
+    --color-card-background: #FFFFFF; /* Fond des sections/cartes */
+    --color-hover-bg: #f3f7fe; 
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --border-radius: 10px;
+}
+
+/* --- Conteneur Principal --- */
+.dashboard-container {
+    background-color: var(--color-background-light);
+    padding: 30px; /* Taille uniforme */
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-text-dark);
+}
+
+/* --- Titres (Taille cohérente : 2.2rem) --- */
+.dashboard-title {
+    color: var(--color-primary-blue);
+    font-size: 2.2rem; 
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.dashboard-subtitle {
+    font-size: 1.1rem; /* Taille uniforme des sous-titres */
+    color: #7f8c8d; 
+    margin-bottom: 30px; 
+    text-align: center;
+    border-bottom: 1px solid #ecf0f1; /* Ligne de séparation */
+    padding-bottom: 15px;
+}
+
+.error-message {
+  color: var(--color-danger-red);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* --- Cartes KPI (Dashboard-cards) --- */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px; 
+    margin-bottom: 30px;
+}
+
+.card {
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-size: 1rem;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Petit effet de survol */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Titres des KPI (Taille demandée : 1.6rem) */
+.card h3 {
+    font-size: 1.6rem; 
+    margin-bottom: 5px;
+    font-weight: 800;
+}
+
+/* Valeurs des KPI (Taille demandée : 1.1rem) */
+.card p {
+    font-size: 1.1rem;
+    margin-top: 0;
+    opacity: 0.9;
+}
+
+/* Couleurs Spécifiques (Basées sur la palette unifiée) */
+.card.blue { background: var(--color-primary-blue); } 
+.card.yellow { background: var(--color-accent-yellow); color: var(--color-text-dark); } 
+.card.red { background: var(--color-danger-red); } 
+.card.green { background: #2ecc71; } /* Vert standard */
+
+
+/* --- Sections Graphiques (Cartes pour les graphiques) --- */
+.dashboard-chart {
+    background-color: var(--color-card-background); 
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    margin-bottom: 30px;
+}
+
+.dashboard-chart h2 {
+    color: var(--color-text-dark);
+    font-size: 1.5rem; /* Taille uniforme des titres de section */
+    font-weight: 600;
+    border-left: 4px solid var(--color-primary-blue); /* Accent Bleu */
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Graphiques (Cohérence des couleurs Recharts) --- */
+/* S'assurer que les barres et lignes utilisent la couleur primaire */
+.recharts-bar-rectangle path,
+.recharts-line .recharts-curve {
+    stroke: var(--color-primary-blue) !important;
+    fill: var(--color-primary-blue) !important;
+}

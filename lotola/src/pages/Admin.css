@@ -1,0 +1,237 @@
+/* =========================================================
+   Admin.css (Style Moderne et Unifié)
+   Gestion des Utilisateurs et Données (Accent ROUGE pour actions critiques)
+   ========================================================= */
+
+/* --- Variables CSS pour la cohérence --- */
+:root {
+    --color-primary-blue: #1A73E8; /* Bleu principal (Actions, Boutons Ajouter, Graphiques) */
+    --color-danger-red: #DC3545; /* Rouge (Boutons Supprimer, Messages d'erreur) */
+    --color-accent-yellow: #FFC107; /* Jaune (Accents, bordures) */
+    --color-text-dark: #34495E; /* Gris foncé pour le texte */
+    --color-background-light: #F4F6F9; /* Arrière-plan général très clair */
+    --color-card-background: #FFFFFF; /* Fond des sections */
+    --color-hover-bg: #f3f7fe; /* Bleu très léger pour le survol */
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --border-radius: 10px;
+}
+
+/* --- Conteneur Principal --- */
+.admin-container {
+    background-color: var(--color-background-light);
+    padding: 30px;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-text-dark);
+}
+
+/* --- Titres (Taille cohérente : 2.5rem) --- */
+.admin-title {
+    color: var(--color-primary-blue);
+    font-size: 2.5rem; 
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+/* --- Sous-titres (Taille cohérente : 1.1rem) --- */
+.admin-subtitle {
+    color: #95a5a6;
+    font-size: 1.1rem; 
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e6eaf0;
+    padding-bottom: 15px;
+}
+
+/* --- Sections (Cartes) --- */
+.admin-section {
+    background-color: var(--color-card-background);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    /* Accent ROUGE pour l'Admin (actions critiques) */
+    border-left: 5px solid var(--color-danger-red); 
+}
+
+/* --- Titres de Section (Taille cohérente : 1.6rem) --- */
+.admin-section h2 {
+    color: var(--color-text-dark);
+    font-size: 1.6rem; 
+    margin-top: 0;
+    border-bottom: 2px solid var(--color-danger-red);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Formulaires d'ajout (Commune/Raison) --- */
+.admin-form {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #ecf0f1;
+    border-radius: var(--border-radius);
+    background-color: var(--color-background-light);
+}
+
+.admin-form label {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.admin-form input, 
+.admin-form select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* --- Boutons d'action (Ajouter/Mettre à jour) --- */
+.action-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.action-button.add {
+    background-color: var(--color-primary-blue);
+    color: white;
+}
+.action-button.add:hover {
+    background-color: #1663c6;
+}
+
+/* --- Tableau de données (Design unifié) --- */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: var(--border-radius);
+    overflow: hidden; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.admin-table th {
+    /* En-tête de tableau Bleu/Gris clair */
+    background-color: #ecf0f1;
+    color: var(--color-text-dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.admin-table tbody tr:hover {
+    background-color: var(--color-hover-bg);
+}
+
+/* --- Liste des Utilisateurs (Nouveau Style) --- */
+.admin-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.admin-list li:hover {
+    background-color: var(--color-hover-bg);
+    padding-left: 10px;
+}
+
+.user-email {
+    flex-grow: 1; /* Permet à l'email de prendre le maximum d'espace */
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+/* --- Tags de Rôle (Identification visuelle) --- */
+.user-role-tag {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+    min-width: 90px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.user-role-tag.admin {
+    background-color: var(--color-danger-red); /* ROUGE pour Admin */
+}
+.user-role-tag.analyst {
+    background-color: var(--color-primary-blue); /* BLEU pour Analyste */
+}
+.user-role-tag.decision {
+    background-color: var(--color-accent-yellow); /* JAUNE pour Décideur */
+    color: var(--color-text-dark); /* Texte sombre sur fond clair */
+}
+.user-role-tag.utilisateur {
+    background-color: #2ecc71; /* VERT pour Utilisateur standard */
+}
+.user-role-tag.blocked {
+    background-color: #7f8c8d; /* Gris pour Bloqué */
+}
+
+/* --- Select de Rôle --- */
+.role-select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-right: 15px;
+    font-size: 0.9rem;
+}
+
+/* --- Bouton Supprimer (pour les utilisateurs) --- */
+.delete-btn {
+    background-color: var(--color-danger-red);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    min-width: 100px;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+/* --- GRAPHIQUES --- */
+.charts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Style des conteneurs de graphiques */
+.charts-container > div {
+    background-color: var(--color-card-background);
+    padding: 10px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}

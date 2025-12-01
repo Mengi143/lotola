@@ -1,68 +1,242 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Base de la page pour une meilleure typographie */
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Typographie plus moderne que Arial */
+    /* Alternative: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif; */
+    background-color: #f7f9fb; /* Fond extra léger */
+    color: #333;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Conteneur principal (Centrage) */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Suppression du background-color ici, car le body le gère */
+}
+/* Carte de connexion */
+.login-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px; /* Bordures légèrement plus arrondies */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Ombre plus douce */
+    border: 1px solid #f0f0f0; /* Bordure très fine et subtile */
+    width: 100%;
+    max-width: 420px; /* Légèrement plus large pour l'équilibre */
+    text-align: center;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* Titre (Logo) et Texte de Marque */
+.logo-title {
+    font-size: 2.8rem; /* Titre plus percutant */
+    color: #004d99; /* Bleu foncé de marque (plus professionnel que le bleu vif) */
+    margin-bottom: 2px;
+    font-weight: 800; /* Extra bold */
+    letter-spacing: -0.5px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.subtitle {
+    font-size: 1.1rem;
+    color: #667788;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #667788;
+    margin-bottom: 35px; /* Plus d'espace sous la description */
+    font-size: 0.95rem;
+}
+
+/* Formulaire et champs */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* Plus d'espace entre les éléments du formulaire */
+}
+
+/* Les groupes d'input */
+.input-group {
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 14px; /* Plus de padding pour un look plus "spacieux" */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-form input:hover {
+    border-color: #c0c0c0; /* Changement subtil au survol */
+}
+
+.login-form input:focus {
+    border-color: #004d99; /* Couleur de marque pour le focus */
+    box-shadow: 0 0 0 3px rgba(0, 77, 153, 0.15); /* Ombre de focus plus discrète */
+    outline: none;
+}
+
+/* Bouton */
+.login-button {
+    padding: 15px; /* Plus de hauteur pour un look premium */
+    background-color: #004d99; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 15px;
+    /* Ombre légère pour effet 3D */
+    box-shadow: 0 4px 10px rgba(0, 77, 153, 0.3); 
+}
+
+.login-button:hover:not(:disabled) {
+    background-color: #003a73;
+    transform: translateY(-1px); /* Léger soulèvement */
+}
+
+.login-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Messages d'erreur */
+.error-message {
+    color: #dc3545;
+    background-color: #fff0f0; /* Fond très léger */
+    border: 1px solid #fdd;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Lien d'enregistrement */
+.footer-link {
+    margin-top: 30px;
+    font-size: 0.95rem;
+    color: #667788;
+}
+
+.footer-link a {
+    color: #004d99;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s;
+}
+.footer-link a:hover {
+    color: #0077b6;
+    text-decoration: underline;
+}
+/* --------------------------------- */
+/* LAYOUT GLOBAL DU TABLEAU DE BORD */
+/* --------------------------------- */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f7f9fb; /* Fond clair */
+}
+
+/* Sidebar (déjà détaillée) */
+.sidebar {
+    width: 260px; 
+    background-color: #ffffff; 
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05); 
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    position: sticky; 
+    top: 0;
+}
+/* ... (Incluez tous les styles .logo, .nav-link, .logout-button vus précédemment) ... */
+
+/* Contenu Principal */
+.main-content {
+    flex-grow: 1; 
+    padding: 30px 40px;
+    overflow-y: auto; /* Permet le défilement du contenu */
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.dashboard-header h2 {
+    font-size: 1.8rem;
+    color: #1a202c;
+    margin: 0;
+}
+
+.content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Espace plus grand entre les sections */
+}
+
+/* --------------------------------- */
+/* KPIs et Cartes d'Information */
+/* --------------------------------- */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+    gap: 30px;
+}
+
+.kpi-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #0077b6; /* Ligne de marque subtile */
+    text-align: left;
+    transition: transform 0.2s;
+}
+.kpi-card:hover {
+    transform: translateY(-3px); /* Effet d'élévation au survol */
+}
+
+.kpi-card h3 {
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.kpi-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 5px 0 0;
+}
+
+.kpi-highlight {
+    border-left-color: #dc3545; /* Couleur d'alerte pour les KPIs critiques (congestion) */
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
 }

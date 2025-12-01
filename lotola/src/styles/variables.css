@@ -1,0 +1,16 @@
+/* src/styles/variables.css (ou au début de votre fichier principal) */
+
+:root {
+    /* Couleurs RDC */
+    --color-drc-blue: #007fff;       /* Primaire */
+    --color-drc-blue-dark: #0066cc;  /* Hover */
+    --color-drc-yellow: #fcd116;     /* Accent/Focus */
+    --color-drc-red: #cf142b;        /* Erreur/Danger */
+
+    /* Couleurs Neutres Modernes */
+    --color-background: #f8f9fa;
+    --color-card-bg: #ffffff;
+    --color-text-primary: #343a40;
+    --color-text-secondary: #6c757d;
+    --color-border: #dee2e6;
+}
